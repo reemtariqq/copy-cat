@@ -18,7 +18,8 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand(
       "functionCopier.copyFunction",
       (functionName: string, functionCode: string) => {
-        vscode.env.clipboard.writeText(functionCode);
+        const functionDeclaration = `${functionCode.substring(0, functionCode.indexOf("{") + 1)}\n\t// Function body\n\t${functionCode.substring(functionCode.indexOf("{") + 1, functionCode.lastIndexOf("}"))}\n}`;
+        vscode.env.clipboard.writeText(functionDeclaration);
         vscode.window.showInformationMessage(
           `Function '${functionName}' copied to clipboard!`
         );
