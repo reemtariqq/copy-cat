@@ -4,6 +4,7 @@
   "description": "A VS Code extension to copy functions from JavaScript files",
   "version": "0.0.1",
   "repository": "https://github.com/reemtariqq/copy-cat",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.60.0"
   },

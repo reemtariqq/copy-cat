@@ -17,12 +17,21 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.commands.registerCommand(
       "functionCopier.copyFunction",
-      (functionName: string, functionCode: string) => {
-        const functionDeclaration = `${functionCode.substring(0, functionCode.indexOf("{") + 1)}\n\t// Function body\n\t${functionCode.substring(functionCode.indexOf("{") + 1, functionCode.lastIndexOf("}"))}\n}`;
-        vscode.env.clipboard.writeText(functionDeclaration);
-        vscode.window.showInformationMessage(
-          `Function '${functionName}' copied to clipboard!`
-        );
+      async (functionName: string) => {
+        const editor = vscode.window.activeTextEditor;
+        if (!editor) {
+          vscode.window.showErrorMessage("No active text editor found.");
+          return;
+        }
+
+        const functionBody = await FunctionCopierProvider.findFunction(editor, functionName);
+
+        if (functionBody) {
+          vscode.env.clipboard.writeText(functionBody);
+          vscode.window.showInformationMessage(
+            `Function '${functionName}' copied to clipboard!`
+          );
+        }
       }
     )
   );
