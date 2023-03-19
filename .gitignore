@@ -1,0 +1,11 @@
+# dependencies
+node_modules/
+npm-debug.log*
+
+# build output
+out/
+*.js
+*.d.ts
+
+# IDE files
+.vscode/

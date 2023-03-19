@@ -1,0 +1,50 @@
+{
+  "name": "functioncopier",
+  "displayName": "Function Copier",
+  "description": "A VS Code extension to copy functions from JavaScript files",
+  "version": "0.0.1",
+  "repository": "https://github.com/reemtariqq/copy-cat",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.copy",
+        "title": "Copy me"
+      }
+    ],
+    "languages": [
+      {
+        "id": "javascript",
+        "aliases": [
+          "JavaScript",
+          "javascript"
+        ],
+        "extensions": [
+          ".js"
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4",
+    "vscode-test": "^1.6.0",
+    "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "vsce": "^2.15.0"
+  }
+}
