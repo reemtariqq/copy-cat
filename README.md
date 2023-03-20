@@ -1,4 +1,4 @@
-#Function Copier
+# Function Copier
 
 Have you ever found yourself copying and pasting a function from one file to another? Don't you just hate it when you miss a line or two and spend hours debugging your code? Fear no more, the Function Copier is here to save the day!
 
