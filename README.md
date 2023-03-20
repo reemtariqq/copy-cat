@@ -10,7 +10,7 @@ CodeLens integration that displays a "Copy function" command above function defi
 "Copy function" command that copies the entire function body to the clipboard.
 Support for JavaScript and TypeScript.
 Installation
-You can install the Function Copier from the Visual Studio Code Marketplace or directly from the Extensions view in Visual Studio Code.
+You can install the Function Copier from the Visual Studio Code Marketplace or directly from the Extensions view in Visual Studio Code. [Marketplace link](https://marketplace.visualstudio.com/items?itemName=ReemT.functioncopier)
 
 # Usage
 Simply open a file containing a function definition and hover over the function name. A "Copy function" command will appear above the function definition. Click the command to copy the entire function body to your clipboard.
